@@ -6,6 +6,7 @@
 
 struct ArrayNode
 {
+    int size;
     int key ;
     int value;
 
@@ -20,10 +21,10 @@ class ArrayBST : public AbstractBST{
     bool isEmpty();
     void addBST(int *key, int *value) = 0 ;
     void remove(int keytoDelete) =0 ;
-    void searchBST(int targetKey) = 0;
+    bool searchBST(int targetKey) = 0;
 
     private:
-    ArrayNode *Array;
+    ArrayNode *Array[MAX_NUM_NODES];
 
 };
 
