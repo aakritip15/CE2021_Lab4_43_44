@@ -17,7 +17,7 @@ class ArrayBST : public AbstractBST{
 
     ArrayBST();
     ~ArrayBST();
-    void isEmpty();
+    bool isEmpty();
     void addBST(int *key, int *value) = 0 ;
     void remove(int keytoDelete) =0 ;
     void searchBST(int targetKey) = 0;
