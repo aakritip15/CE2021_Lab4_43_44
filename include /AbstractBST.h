@@ -7,7 +7,7 @@ private:
      AbstractBST();
     ~ AbstractBST();
     virtual void isEmpty();
-    virtual void addBST(int *key, int *array) = 0 ;
+    virtual void addBST(int *key, int *value) = 0 ;
     virtual void remove(int keytoDelete) =0 ;
     virtual void searchBST(int targetKey) = 0;
 
