@@ -3,7 +3,7 @@
 
 class  AbstractBST
 {
-private: 
+public: 
      AbstractBST();
     ~ AbstractBST();
     virtual void isEmpty();
