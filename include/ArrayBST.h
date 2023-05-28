@@ -3,13 +3,17 @@
 
 #include "AbstractBST.h"
 #define MAX_NUM_NODES 20
+#define NULL __null
 
 struct ArrayNode
 {
-    int size;
     int key ;
     int value;
 
+    ArrayNode(){
+        key = NULL;
+        value = NULL;
+    };
     ArrayNode(int key , int value) : key(key), value (value) {}
 };
 
@@ -19,13 +23,13 @@ class ArrayBST : public AbstractBST{
     ArrayBST();
     ~ArrayBST();
     bool isEmpty();
-    void addBST(int *key, int *value) = 0 ;
-    void remove(int keytoDelete) =0 ;
-    bool searchBST(int targetKey) = 0;
+    void addBST(int key, int value)  ;
+    void remove(int keytoDelete) ;
+    bool searchBST(int targetKey) ;
 
     private:
-    ArrayNode *Array[MAX_NUM_NODES];
-
+    ArrayNode Array[MAX_NUM_NODES];
+    int size ;
 };
 
 
