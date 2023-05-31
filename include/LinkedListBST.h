@@ -22,11 +22,13 @@ class LinkedListBST : public AbstractBST{
     ~LinkedListBST();
 
     bool isEmpty();
-    void add(int key, int value) =0;
-    void remove(int keytoDelete) =0 ;
-    void searchBST(int targetKey) = 0;
+    
 
+    private:
+    Node *root;
+    void add(Node* root, Node* newNode);
+   // void remove(int keytoDelete) =0 ;
+    // void searchBST(int targetKey) = 0;
 };
 
 #endif
-// hew
