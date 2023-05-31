@@ -103,32 +103,18 @@ void ArrayBST ::remove(int keytoDelete)
             currentIndex = 2 * currentIndex + 1;
         }
       else {
-            bool onlyleft = false; //if the node is only left child
-            // Key found
-
-            // Case: 1   Node has two children
+         
 
             if (2 * currentIndex + 1 < MAX_NUM_NODES && Array[2 * currentIndex + 1].key != 0 &&
                 2 * currentIndex + 2 < MAX_NUM_NODES && Array[2 * currentIndex + 2].key != 0) {
-                // if(onlyleft) // go to the greatest element of left child 
-                // {
-                //     int successorIndex = 2 * currentIndex + 2;
-                // while (2 * successorIndex + 1 < MAX_NUM_NODES && Array[2 * successorIndex + 1].key != 0) {
-                //     successorIndex = 2 * successorIndex + 1;
-                // }
-                // Array[currentIndex] = Array[successorIndex];
-                // currentIndex = successorIndex; 
-                // }
-                // else{
-                
-                // go to the least element of right child 
+              
                 int successorIndex = 2 * currentIndex + 1;
                 while (2 * successorIndex + 2 < MAX_NUM_NODES && Array[2 * successorIndex + 2].key != 0) {
                     successorIndex = 2 * successorIndex + 2;
                 }
                 Array[currentIndex] = Array[successorIndex];
                 currentIndex = successorIndex;
-                // }
+               
             }
             // Case: 2  Node has only left child
              else if (2 * currentIndex + 1 < MAX_NUM_NODES && Array[2 * currentIndex + 1].key != 0) { 
@@ -181,12 +167,12 @@ while(true)
         }
         else
         {
-         cout << "The value of key is" << Array[currentIndex].value << "The index  is " <<currentIndex<<endl;
+         cout << "The value of key "<< Array[currentIndex].key<< " is " << Array[currentIndex].value << " The index  is " <<currentIndex<<endl;
          return true;
         }
         if(Array[currentIndex].key ==NULL)
         {
-            return NULL;
+            return false;
         }
 }
 }

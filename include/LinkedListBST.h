@@ -26,9 +26,10 @@ class LinkedListBST : public AbstractBST{
 
     private:
     Node *root;
-    void add(Node* root, Node* newNode);
-   // void remove(int keytoDelete) =0 ;
-    // void searchBST(int targetKey) = 0;
+    void add(int key, int value);
+    void add(Node* subtreeRoot, Node* newNode);
+    bool searchBST(int targetKey) ;
+    void remove(int keytoDelete);
 };
 
 #endif
