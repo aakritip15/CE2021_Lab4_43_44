@@ -32,6 +32,7 @@ bool LinkedBST::isEmpty() {
     return this->root == NULL;
 }
 
+
 bool LinkedBST::searchBST(int data) {
     if (search(this->root, data) == true) {
         cout << "Search result for " << data << ": " << search(this->root, data) << endl;
@@ -55,7 +56,39 @@ bool LinkedBST::search(Node* root, int data) {
     }
 }
 
+void LinkedBST::max(int &output)
+{
+    if (!isEmpty())
+    {
+        Node *temp = this->root;
+        while (temp->right != NULL)
+        {
+            temp = temp->right;
+        }
+        output = temp->data;
+    }
+    else
+    {
+        cout << "The tree is empty" << endl;
+    }
+}
 
+void LinkedBST::min(int &output)
+{
+    if (!isEmpty())
+    {
+        Node *temp = this->root;
+        while (temp->left != NULL)
+        {
+            temp = temp->left;
+        }
+        output = temp->data;
+    }
+    else
+    {
+        cout << "THE TREE IS EMPTY" << endl;
+    }
+}
 
 void LinkedBST::inorder() {
     cout << "The traversal yields" << endl;

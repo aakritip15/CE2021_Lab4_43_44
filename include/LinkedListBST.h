@@ -15,8 +15,8 @@ public:
     void removeBST(int);
     bool searchBST(int);
     void inorder();
-    //void max(int&);
-    //void min(int&);
+    void max(int&);
+    void min(int&);
 
 private:
     Node* root;

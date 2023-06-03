@@ -10,6 +10,8 @@ public:
     virtual void addBST(int) = 0;
     virtual void removeBST(int) = 0;
     virtual bool searchBST(int) = 0;
+    virtual void max(int &output) = 0;
+    virtual void min(int &output) = 0;
 
 };
 
