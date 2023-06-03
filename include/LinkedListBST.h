@@ -1,35 +1,28 @@
-#ifndef LinkedListBST_h
-#define LinkedListBST_h
+#include "AbstractBST.h";
+#include<iostream>
+using namespace std;
 
-#include "AbstractBST.h"
-
-struct Data{
-    int key;
-    int value;
+struct Node {
+    int data;
+    Node* left;
+    Node* right;
 };
 
-struct Node{
-    Data data;
-
-    Node* leftchild;
-    Node* rightchild;
-};
-
-class LinkedListBST : public AbstractBST{
-    public:
-
-    LinkedListBST();
-    ~LinkedListBST();
-
+class LinkedBST : public bst {
+public:
     bool isEmpty();
-    
+    void addBST(int);
+    void removeBST(int);
+    bool searchBST(int);
+    void inorder();
+    //void max(int&);
+    //void min(int&);
 
-    private:
-    Node *root;
-    void add(int key, int value);
-    void add(Node* subtreeRoot, Node* newNode);
-    bool searchBST(int targetKey) ;
-    void remove(int keytoDelete);
+private:
+    Node* root;
+    Node* add(Node* root, int data);
+    void inorder(Node* node);
+    Node* getNewNode(int data);
+    Node* Delete(Node* root, int data);
+    bool search(Node* root, int data);
 };
-
-#endif

@@ -1,10 +1,11 @@
-#include "ArrayBST.h"
+#include "LinkedListBST.h"
 #include <iostream>
 using namespace std;
 
 
 int main()
 {
+
     ArrayBST a;
     cout << "Is Empty : " <<a.isEmpty() <<endl;
 
@@ -16,8 +17,6 @@ int main()
     a.addBST(100,4);
     a.addBST(45,5);
     a.addBST(1,7);
-
-
    
     cout<< "Search key 13 : " <<a.searchBST(13) <<endl;
     cout<< "Search key 10 : " <<a.searchBST(10) <<endl;
@@ -32,6 +31,39 @@ int main()
     a.remove(45);
     
     cout<<"Search key 45: " << a.searchBST(45) <<endl;
+
+
+    LinkedBST tree;
+    tree.addBST(5);
+    tree.addBST(3);
+    tree.addBST(7);
+    tree.addBST(2);
+    tree.addBST(4);
+    tree.addBST(6);
+    tree.addBST(8);
+
+    cout << "Inorder Traversal" << endl;
+    tree.inorder();
+
+    int value;
+    cout << "Enter a value to search ";
+    cin >> value;
+    if (tree.searchBST(value)) {
+        cout << "Value is found!" << endl;
+    }
+    else {
+        cout << "Value is not found!" << endl;
+    }
+
+    int removeValue;
+    cout << "Enter a value to remove ";
+    cin >> removeValue;
+    tree.removeBST(removeValue);
+    cout << "Inorder Traversal after removing:" << endl;
+    tree.inorder();
+
+    // delete tree;
+    return 0;
 
 
 }

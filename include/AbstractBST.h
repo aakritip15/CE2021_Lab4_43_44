@@ -7,9 +7,9 @@ public:
      AbstractBST(){};
     ~ AbstractBST(){};
     virtual bool isEmpty() = 0;
-    virtual void addBST(int key, int value) = 0 ;
-    virtual void remove(int keytoDelete) =0 ;
-    virtual bool searchBST(int targetKey) = 0;
+    virtual void addBST(int) = 0;
+    virtual void removeBST(int) = 0;
+    virtual bool searchBST(int) = 0;
 
 };
 
